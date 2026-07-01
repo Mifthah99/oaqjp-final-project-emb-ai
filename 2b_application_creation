@@ -1,0 +1,4 @@
+>>> from EmotionDetection import emotion_detection as em
+>>> text_to_analyze="I love this new tecnology"
+>>> em.emotion_detector(text_to_analyze)
+{'emotionPredictions': [{'emotion': {'anger': 0.007633729, 'disgust': 0.0013805786, 'fear': 0.005904107, 'joy': 0.990848, 'sadness': 0.016934898}, 'target': '', 'emotionMentions': [{'span': {'begin': 0, 'end': 25, 'text': 'I love this new tecnology'}, 'emotion': {'anger': 0.007633729, 'disgust': 0.0013805786, 'fear': 0.005904107, 'joy': 0.990848, 'sadness': 0.016934898}}]}], 'producerId': {'name': 'Ensemble Aggregated Emotion Workflow', 'version': '0.0.1'}}
