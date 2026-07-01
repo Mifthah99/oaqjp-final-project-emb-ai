@@ -2,9 +2,9 @@
 text from a webpage form and passes back result from model in text format """
 import json
 from flask import Flask, render_template, request
-from EmotionDetection.emotion_detection import emotion_detector
+from EmotionDetection import emotion_detector
 
-app=Flask("Emotion Detection")
+app=Flask("Sentiment Analyzer")
 
 @app.route('/')
 def home():
@@ -16,8 +16,8 @@ def detect_emotion():
     """ passes text from the html form to the emotion_detector function.
     Returns amodified string for better readability"""
     text=request.args.get("textToAnalyze")
-    if len(text)==0:
-        return "Please Enter text"
+    if request.args.get("status_code")==400:
+        print("text_empty...")
     response=emotion_detector(text)
     d=response["dominant_emotion"]
     if 'dominant_emotion'in response:
